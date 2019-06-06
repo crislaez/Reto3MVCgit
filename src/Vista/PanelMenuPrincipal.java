@@ -30,7 +30,7 @@ public class PanelMenuPrincipal extends JPanel {
 		add(btnborrarcliente);
 		
 		lblfondopanelprincipal = new JLabel("New label");
-		lblfondopanelprincipal.setIcon(new ImageIcon("C:\\eclipse-workspace\\AReto3MVC\\Cosas\\fondo1.jpg"));
+		lblfondopanelprincipal.setIcon(new ImageIcon("C:\\eclipse-workspace\\AAReto3MVC\\Cosas\\fondo3.jpg"));
 		lblfondopanelprincipal.setBounds(0, 0, 926, 616);
 		add(lblfondopanelprincipal);
 	}

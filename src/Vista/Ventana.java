@@ -15,6 +15,11 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import java.awt.Color;
+import javax.swing.JComboBox;
+import com.toedter.calendar.JCalendar;
+import com.toedter.calendar.JDateChooser;
+import javax.swing.JTextField;
+import javax.swing.JFormattedTextField;
 
 public class Ventana extends JFrame {
 
@@ -22,6 +27,9 @@ public class Ventana extends JFrame {
 	public PanelBienvenida panelbienvenida;
 	public PanelMenuPrincipal panelmenuprincipal;
 	public PanelMenuOpcion panelmenuopcion;
+	public PanelParadas panelparadas;
+	public PanelBus panelbus;
+	public PanelLogin panellogin;
 	
 
 	public Ventana() {
@@ -48,7 +56,24 @@ public class Ventana extends JFrame {
 		contentPane.add(panelmenuopcion);
 		panelmenuopcion.setLayout(null);
 		
+		//instanciar Bienvenida
+		panelparadas= new PanelParadas();
+		contentPane.add(panelparadas);
+		panelparadas.setLayout(null);
 		
+		//instanciar Bienvenida
+		panelbus= new PanelBus();
+		contentPane.add(panelbus);
+		panelbus.setLayout(null);
+		
+		//instanciar Bienvenida
+		panellogin= new PanelLogin();
+		contentPane.add(panellogin);
+		panellogin.setLayout(null);
+		
+		
+		
+
 		
 
 		

@@ -28,7 +28,7 @@ public class PanelMenuOpcion extends JPanel {
 		rdbtnIda.setBounds(173, 114, 105, 21);
 		add(rdbtnIda);
 		
-		rdbtnVuelta = new JRadioButton("Vuelta");
+		rdbtnVuelta = new JRadioButton("Ida y Vuelta");
 		rdbtnVuelta.setFont(new Font("Arial", Font.BOLD, 27));
 		rdbtnVuelta.setBounds(675, 119, 124, 21);
 		add(rdbtnVuelta);
@@ -53,13 +53,13 @@ public class PanelMenuOpcion extends JPanel {
 		btnContinuar.setEnabled(false);
 		
 		lblescogerlinea = new JLabel("Escoja Linea");
-		lblescogerlinea.setForeground(Color.WHITE);
+		lblescogerlinea.setForeground(Color.BLACK);
 		lblescogerlinea.setFont(new Font("Arial", Font.BOLD, 37));
 		lblescogerlinea.setBounds(369, 34, 236, 59);
 		add(lblescogerlinea);
 		
 		lblFondo = new JLabel("New label");
-		lblFondo.setIcon(new ImageIcon("C:\\eclipse-workspace\\AReto3MVC\\Cosas\\fondo1.jpg"));
+		lblFondo.setIcon(new ImageIcon("C:\\eclipse-workspace\\AAReto3MVC\\Cosas\\fondo3.jpg"));
 		lblFondo.setBounds(0, 0, 926, 603);
 		add(lblFondo);
 

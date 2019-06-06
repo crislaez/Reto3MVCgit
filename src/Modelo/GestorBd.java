@@ -9,8 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 
@@ -46,7 +48,7 @@ public class GestorBd {
 		
 	}
 //------------------------------------------------------------------------------------------------------------------------		
-//rellenar casa final ordenado por precio
+//Buscar Liena
 	public void verlineas(JList lista,DefaultListModel modelo) {
 		boolean error=true; 
         String tipoDeProcedimiento = "{ call verlineas() }";
@@ -71,6 +73,60 @@ public class GestorBd {
               lista.setModel(modelo);  
 	       
                      
+            
+        } catch (SQLException ex) {
+            System.out.println("SQLException error" );
+        }
+        close();
+    }
+//------------------------------------------------------------------------------------
+//rellenar parada
+	public void verparadas(String Cod_Linea,JList listaIda,DefaultListModel modelo2,JList listaVuelta,DefaultListModel modelo3) {
+		
+        String tipoDeProcedimiento = "{ call vercodigoparada(?) }";
+        conectar();
+        try {
+              CallableStatement miSentencia = connect.prepareCall(tipoDeProcedimiento);
+     
+              miSentencia.setString(1, Cod_Linea);
+             resultSet= miSentencia.executeQuery();
+            
+              while (resultSet.next()) {
+            	
+            	  
+            	  modelo2.addElement("Codigo Parada:,"+resultSet.getInt(1)+", Nombre: ,"+resultSet.getString(2)+", Calle: ,"+resultSet.getString(3)+", Latitud: ,"+resultSet.getFloat(4)+", Longitud: ,"+resultSet.getFloat(5)+",");
+                  modelo3.addElement("Codigo Parada:,"+resultSet.getInt(1)+", Nombre: ,"+resultSet.getString(2)+", Calle: ,"+resultSet.getString(3)+", Latitud: ,"+resultSet.getFloat(4)+", Longitud: ,"+resultSet.getFloat(5)+",");
+              }
+            
+             listaIda.setModel(modelo2);
+             listaVuelta.setModel(modelo3);
+            
+        } catch (SQLException ex) {
+            System.out.println("SQLException error" );
+        }
+        close();
+    }
+//------------------------------------------------------------------------------------
+//rellenar buses
+	public void verbuses(String Cod_Linea,JList listabuses,DefaultListModel modelo4) {
+		
+        String tipoDeProcedimiento = "{ call verbus(?) }";
+        conectar();
+        try {
+              CallableStatement miSentencia = connect.prepareCall(tipoDeProcedimiento);
+     
+              miSentencia.setString(1, Cod_Linea);
+             resultSet= miSentencia.executeQuery();
+            
+              while (resultSet.next()) {
+            	
+            	  
+            	  modelo4.addElement("Codigo Bus:,"+resultSet.getInt(1)+", Numero de Plazas: ,"+resultSet.getInt(2)+", Consumo: ,"+resultSet.getFloat(3)+", Color: ,"+resultSet.getString(4)+",");
+                 
+              }
+            
+              listabuses.setModel(modelo4);
+            
             
         } catch (SQLException ex) {
             System.out.println("SQLException error" );
