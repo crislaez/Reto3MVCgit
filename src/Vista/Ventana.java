@@ -20,6 +20,7 @@ import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
+import javax.swing.JPasswordField;
 
 public class Ventana extends JFrame {
 
@@ -30,6 +31,11 @@ public class Ventana extends JFrame {
 	public PanelParadas panelparadas;
 	public PanelBus panelbus;
 	public PanelLogin panellogin;
+	public PanelRegistro panelregistro;
+	private JTextField textFieldNombre;
+	private JTextField textFieldApellido;
+	private JTextField textFieldContrasena;
+	private JLabel lblFondo;
 	
 
 	public Ventana() {
@@ -46,33 +52,39 @@ public class Ventana extends JFrame {
 		contentPane.add(panelbienvenida);
 		panelbienvenida.setLayout(null);
 		
-		//instanciar Bienvenida
+		//instanciar menu principal
 		panelmenuprincipal= new PanelMenuPrincipal();
 		contentPane.add(panelmenuprincipal);
 		panelmenuprincipal.setLayout(null);
 		
-		//instanciar Bienvenida
+		//instanciar menu opciones
 		panelmenuopcion= new PanelMenuOpcion();
 		contentPane.add(panelmenuopcion);
 		panelmenuopcion.setLayout(null);
 		
-		//instanciar Bienvenida
+		//instanciar panel de las paradas
 		panelparadas= new PanelParadas();
 		contentPane.add(panelparadas);
 		panelparadas.setLayout(null);
 		
-		//instanciar Bienvenida
+		//instanciar panel del bus
 		panelbus= new PanelBus();
 		contentPane.add(panelbus);
 		panelbus.setLayout(null);
-		
-		//instanciar Bienvenida
+
+		//instanciar login
 		panellogin= new PanelLogin();
 		contentPane.add(panellogin);
 		panellogin.setLayout(null);
 		
+		//instanciar registro
+		panelregistro= new PanelRegistro();
+		contentPane.add(panelregistro);
+		panelregistro.setLayout(null);
 		
 		
+		
+
 
 		
 

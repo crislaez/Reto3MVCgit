@@ -2,23 +2,40 @@ package Vista;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.text.ParseException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.text.MaskFormatter;
 
 public class PanelLogin extends JPanel {
 
 	public JLabel lblLogin,lblDni,lblContrasena,lblFondo;
-	public JTextField textFieldDni;
-	public JFormattedTextField formattedTextFieldContrasena;
-	public JButton btnAtras,btnContinuar,btnNewButton;
+	public JFormattedTextField formattedTextField;
+	public JPasswordField passwordField;
+	public JButton btnAtras,btnContinuar,btnRegistrarse;
 	
 	public PanelLogin() {
 
+		MaskFormatter mf = null;
+		try {
+			mf = new MaskFormatter("########?");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		MaskFormatter mft = null;
+		try {
+			mft = new MaskFormatter("##");
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		lblLogin = new JLabel("LOGIN");
 		lblLogin.setForeground(Color.BLACK);
@@ -38,14 +55,14 @@ public class PanelLogin extends JPanel {
 		lblContrasena.setBounds(186, 318, 210, 39);
 		add(lblContrasena);
 		
-		textFieldDni = new JTextField();
-		textFieldDni.setBounds(422, 229, 139, 31);
-		add(textFieldDni);
-		textFieldDni.setColumns(10);
+		formattedTextField = new JFormattedTextField();
+		formattedTextField.setBounds(422, 229, 139, 31);
+		add(formattedTextField);
+			
 		
-		formattedTextFieldContrasena = new JFormattedTextField();
-		formattedTextFieldContrasena.setBounds(422, 325, 139, 32);
-		add(formattedTextFieldContrasena);
+		passwordField = new JPasswordField();
+		passwordField.setBounds(422, 325, 139, 32);
+		add(passwordField);
 		
 		btnAtras = new JButton("ATRAS");
 		btnAtras.setFont(new Font("Arial", Font.BOLD, 15));
@@ -56,12 +73,12 @@ public class PanelLogin extends JPanel {
 		btnContinuar.setFont(new Font("Arial", Font.BOLD, 15));
 		btnContinuar.setBounds(738, 565, 198, 48);
 		add(btnContinuar);
-		btnContinuar.setEnabled(false);
+		//btnContinuar.setEnabled(false);
 		
-		btnNewButton = new JButton("REGISTRARSE");
-		btnNewButton.setFont(new Font("Arial", Font.BOLD, 15));
-		btnNewButton.setBounds(631, 229, 151, 128);
-		add(btnNewButton);
+		btnRegistrarse = new JButton("REGISTRARSE");
+		btnRegistrarse.setFont(new Font("Arial", Font.BOLD, 15));
+		btnRegistrarse.setBounds(631, 229, 151, 128);
+		add(btnRegistrarse);
 		
 		lblFondo = new JLabel("New label");
 		lblFondo.setIcon(new ImageIcon("C:\\eclipse-workspace\\AAReto3MVC\\Cosas\\fondo3.jpg"));

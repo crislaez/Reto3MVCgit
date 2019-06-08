@@ -14,7 +14,7 @@ import com.toedter.calendar.JDateChooser;
 public class ModeloParadas {
 
 	String dia_ida,mes_ida,ano_ida,fechainicio,hora,minutos,horas;
-public GestorBd gestor;
+	public GestorBd gestor;
 	
 	public ModeloParadas(GestorBd gestor) {
 		

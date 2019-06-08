@@ -133,6 +133,65 @@ public class GestorBd {
         }
         close();
     }
+//------------------------------------------------------------------------------------
+//Comprobar que el DNI y la contrasena que se pasa por parametros coinciden con el de la BBDD, numero de filas es 1
+	public int comprovardnicontraseña(String dni, String contrasena) throws Exception {
+		int resultado=0;
+		
+		
+		conectar();
+		String sql = "select * FROM cliente WHERE dni='"+dni+"' AND contraseña='"+contrasena+"'";
+		try 
+		{
+	    	
+	    	statement = connect.createStatement();
+	   
+	        resultSet = statement.executeQuery(sql);
+	                
+	        if(resultSet.next()) 
+		    {
+	        	resultado=1;
+	        	System.out.println(resultado);
+		    }
+		      
+		} 
+	    catch (SQLException e) 
+	    {
+		    e.printStackTrace();
+	
+		   
+		} 
+		 close();
+	    return resultado;
+	 
+	}	
+//------------------------------------------------------------------------------------------------------------	
+//insertat cliente
+		public int insertarCliente(String dni,String nombre,String apellido,String fecha, String sexo, String contrasena) throws Exception 
+		{ int prueba=0;
+		    try 
+		    {
+		    	conectar();
+		        // Statements allow to issue SQL queries to the database
+		        statement = connect.createStatement();
+		
+		        // PreparedStatements can use variables and are more efficient
+		        preparedStatement = connect
+		                .prepareStatement("insert into cliente(DNI,Nombre,Apellidos,Fecha_nac,Sexo,Contraseña) "
+		                		+ "values (\""+dni+"\",\""+nombre+"\",\""+apellido+"\",\""+fecha+"\",\""+sexo+"\",\""+contrasena+"\")");       
+		        
+		        preparedStatement.executeUpdate();
+		
+		    } 
+		    catch (SQLException e) 
+		    {
+		    	System.out.println("SQLException corregido");
+		    	JOptionPane.showMessageDialog(null, "Error al ingresar, el Usuario ya existe");
+		    	prueba=1;	    	
+		    } 
+		    close();
+		return prueba;
+		}
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 //insertar host
 	public static String InsertarHost() 
@@ -216,7 +275,8 @@ public class GestorBd {
 		contrasena=texto.split(";")[2];
 					
 		return contrasena;
-		}		
+		}	
+	
 	//----------------------------------------------------------------------------------------
 	public void close() {
 	    try {
