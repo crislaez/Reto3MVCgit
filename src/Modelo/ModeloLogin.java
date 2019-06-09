@@ -1,7 +1,11 @@
 package Modelo;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+
+import org.apache.commons.codec.digest.DigestUtils;
 
 public class ModeloLogin {
 
@@ -18,10 +22,15 @@ public class ModeloLogin {
 	 * @param panellogin
 	 * @param panelpago
 	 */
-	public void continuar(String dni, String contrasena,JPanel panellogin, JPanel panelpago) {
-		int aux=1;
+	public void continuar(JFormattedTextField dni, JPasswordField contrasena,JPanel panellogin, JPanel panelpago,Cliente cliente) {
+		int aux=0;
+		cliente.setDNI(dni.getText());
+		Modelo.encriptMD5=DigestUtils.md5Hex(contrasena.getText());
+		cliente.setContraseña(Modelo.encriptMD5);
+		System.out.println(cliente.getDNI());
+		System.out.println(cliente.getContraseña());
 		try {
-			aux=gestor.comprovardnicontraseña(dni, contrasena);
+			aux=gestor.comprovardnicontraseña(cliente.getDNI(), cliente.getContraseña());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Exception corregido");

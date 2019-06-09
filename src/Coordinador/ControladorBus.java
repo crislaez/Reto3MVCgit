@@ -35,6 +35,7 @@ public class ControladorBus implements ActionListener, MouseListener{
 			Modelo.aux2=0;
 		}
 		if (e.getSource()==ventana.panelbus.btnContinuar) {
+			modelo.modelobus.precio(modelo.billete,modelo.billete2,ventana.panelpago.DineroFaltante);
 			funciones.cambiarDePanel(ventana.panelbus, ventana.panellogin);
 			
 		}

@@ -35,6 +35,7 @@ public class ControladorRegistro implements ActionListener{
 		if (e.getSource()==ventana.panelregistro.btnAtras) {
 			funciones.cambiarDePanel(ventana.panelregistro, ventana.panelmenuopcion);
 			ventana.panelparadas.btnContinuar.setEnabled(false);
+			resetear();
 			Modelo.aux2=0;
 		}
 		if (e.getSource()==ventana.panelregistro.btnRegistrarse) {

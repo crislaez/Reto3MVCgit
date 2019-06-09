@@ -16,7 +16,7 @@ import javax.swing.text.MaskFormatter;
 public class PanelLogin extends JPanel {
 
 	public JLabel lblLogin,lblDni,lblContrasena,lblFondo;
-	public JFormattedTextField formattedTextField;
+	public JFormattedTextField formattedTextFieldDni;
 	public JPasswordField passwordField;
 	public JButton btnAtras,btnContinuar,btnRegistrarse;
 	
@@ -25,13 +25,6 @@ public class PanelLogin extends JPanel {
 		MaskFormatter mf = null;
 		try {
 			mf = new MaskFormatter("########?");
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		MaskFormatter mft = null;
-		try {
-			mft = new MaskFormatter("##");
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -55,9 +48,9 @@ public class PanelLogin extends JPanel {
 		lblContrasena.setBounds(186, 318, 210, 39);
 		add(lblContrasena);
 		
-		formattedTextField = new JFormattedTextField();
-		formattedTextField.setBounds(422, 229, 139, 31);
-		add(formattedTextField);
+		formattedTextFieldDni = new JFormattedTextField(mf);
+		formattedTextFieldDni.setBounds(422, 229, 139, 31);
+		add(formattedTextFieldDni);
 			
 		
 		passwordField = new JPasswordField();

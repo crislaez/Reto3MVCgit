@@ -32,10 +32,7 @@ public class Ventana extends JFrame {
 	public PanelBus panelbus;
 	public PanelLogin panellogin;
 	public PanelRegistro panelregistro;
-	private JTextField textFieldNombre;
-	private JTextField textFieldApellido;
-	private JTextField textFieldContrasena;
-	private JLabel lblFondo;
+	public PanelPago panelpago;
 	
 
 	public Ventana() {
@@ -82,6 +79,10 @@ public class Ventana extends JFrame {
 		contentPane.add(panelregistro);
 		panelregistro.setLayout(null);
 		
+		//instanciar panelpago
+		panelpago= new PanelPago();
+		contentPane.add(panelpago);
+		panelpago.setLayout(null);
 		
 		
 

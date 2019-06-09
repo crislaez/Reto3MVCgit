@@ -18,18 +18,20 @@ public class Controlador {
 	private ControladorBus controladorbus;
 	private ControladorLogin controladorlogin;
 	private ControladorRegistro controladorregistro;
+	private ControladorPago controladorpago;
 	
-	public Controlador(Ventana ventana,Modelo mode) {
+	public Controlador(Ventana ventana,Modelo modelo) {
 		this.ventana=ventana;
-		this.modelo=mode;
+		this.modelo=modelo;
 		
-		this.setControladorpanelbienvenida(new ControladorBienvenida(ventana,mode));
-		this.setControladormenuprincipal(new ControladorMenuPrincipal(ventana,mode));
-		this.setControladormenuopcion(new ControladorMenuOpcion(ventana,mode));
-		this.setControladorparadas(new ControladorParadas(ventana,mode));
-		this.setControladorbus(new ControladorBus(ventana,mode));
-		this.setControladorlogin(new ControladorLogin(ventana,mode));
-		this.setControladorregistro(new ControladorRegistro(ventana,mode));
+		this.setControladorpanelbienvenida(new ControladorBienvenida(ventana,modelo));
+		this.setControladormenuprincipal(new ControladorMenuPrincipal(ventana,modelo));
+		this.setControladormenuopcion(new ControladorMenuOpcion(ventana,modelo));
+		this.setControladorparadas(new ControladorParadas(ventana,modelo));
+		this.setControladorbus(new ControladorBus(ventana,modelo));
+		this.setControladorlogin(new ControladorLogin(ventana,modelo));
+		this.setControladorregistro(new ControladorRegistro(ventana,modelo));
+		this.setControladorpago(new ControladorPago(ventana,modelo));
 	}
 
 	public ControladorBienvenida getControladorpanelbienvenida() {
@@ -86,6 +88,14 @@ public class Controlador {
 
 	public void setControladorregistro(ControladorRegistro controladorregistro) {
 		this.controladorregistro = controladorregistro;
+	}
+
+	public ControladorPago getControladorpago() {
+		return controladorpago;
+	}
+
+	public void setControladorpago(ControladorPago controladorpago) {
+		this.controladorpago = controladorpago;
 	}
 	
 
