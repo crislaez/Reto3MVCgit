@@ -17,6 +17,7 @@ public class Modelo {
 	public ModeloLogin modelologin;
 	public ModeloRegistro modeloregistro;
 	public ModeloPago modelopago;
+	public ModeloTicket modeloticket;
 	
 	public GestorBd gestor;
 	public static String codigo;
@@ -33,6 +34,8 @@ public class Modelo {
 	public static int uno;
 	public static int dos;
 	public static int aux2;
+	public static int ntrayectos;
+	public static int ntrayectosnegativo;
 	
 	public static String encriptMD5;
 	
@@ -53,11 +56,13 @@ public class Modelo {
 	public Billete billete;
 	public Billete billete2;
 	public Cliente cliente;
+	public Precio precios;
 	//constructor
 	public Modelo() {
 		this.billete=new Billete();
 		this.billete2=new Billete();
 		this.cliente=new Cliente();
+		this.precios=new Precio();
 		this.gestor=new GestorBd();
 		this.paradas=new ArrayList<Parada>();
 		this.modelobienvenida=new ModeloBienvenida();
@@ -68,6 +73,7 @@ public class Modelo {
 		this.modelologin=new ModeloLogin(gestor);
 		this.modeloregistro= new ModeloRegistro(gestor);
 		this.modelopago=new ModeloPago(gestor);
+		this.modeloticket=new ModeloTicket(gestor);
 	}
 	
 	

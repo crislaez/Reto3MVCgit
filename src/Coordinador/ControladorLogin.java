@@ -36,7 +36,7 @@ public class ControladorLogin implements ActionListener{
 			Modelo.aux2=0;
 		}
 		if (e.getSource()==ventana.panellogin.btnContinuar) {
-			modelo.modelologin.continuar(ventana.panellogin.formattedTextFieldDni, ventana.panellogin.passwordField, ventana.panellogin, ventana.panelpago,modelo.cliente);		
+			modelo.modelologin.continuar(ventana.panellogin.formattedTextFieldDni, ventana.panellogin.passwordField, ventana.panellogin, ventana.panelpago,modelo.cliente,modelo.billete,modelo.billete2);		
 			resetear();	
 		}
 		if (e.getSource()==ventana.panellogin.btnRegistrarse) {

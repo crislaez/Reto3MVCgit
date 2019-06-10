@@ -192,6 +192,52 @@ public class GestorBd {
 		    close();
 		return prueba;
 		}
+//------------------------------------------------------------------------------------------------------------	
+//insertat billete
+		public void insertarBillete(int Cod_Billete,int NTrayecto,String Cod_Linea,int Cod_Bus, int Cod_Parada_Inicio, int Cod_Parada_Fin,String Fecha,String Hora,String DNI,float Precio) throws Exception 
+		{ 
+		int codigo=0;
+		int aux=0;
+		conectar();
+			try
+			{
+				statement = connect.createStatement();
+				resultSet = statement.executeQuery("select Cod_Billete from billete order by Cod_Billete desc limit 1");
+				while (resultSet.next())
+				{
+					aux = resultSet.getInt("Cod_Billete");
+				}
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+			
+			codigo=aux+1;
+			
+		    try 
+		    {
+		    	
+		        // Statements allow to issue SQL queries to the database
+		        statement = connect.createStatement();
+		
+		        // PreparedStatements can use variables and are more efficient
+		        preparedStatement = connect
+		                .prepareStatement("insert into billete(Cod_Billete,NTrayecto,Cod_Linea,Cod_Bus,Cod_Parada_Inicio,Cod_Parada_Fin,Fecha,Hora,DNI,Precio) "
+		                		+ "values (\""+codigo+"\",\""+NTrayecto+"\",\""+Cod_Linea+"\",\""+Cod_Bus+"\",\""+Cod_Parada_Inicio+"\",\""+Cod_Parada_Fin+"\",\""+Fecha+"\",\""+Hora+"\",\""+DNI+"\",\""+Precio+"\")");       
+		        
+		        preparedStatement.executeUpdate();
+		
+		    } 
+		    catch (SQLException e) 
+		    {
+		    	System.out.println("SQLException corregido");
+		    	  	
+		    } 
+		    close();
+		
+		}
+
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 //insertar host
 	public static String InsertarHost() 

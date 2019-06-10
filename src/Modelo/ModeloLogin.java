@@ -22,7 +22,7 @@ public class ModeloLogin {
 	 * @param panellogin
 	 * @param panelpago
 	 */
-	public void continuar(JFormattedTextField dni, JPasswordField contrasena,JPanel panellogin, JPanel panelpago,Cliente cliente) {
+	public void continuar(JFormattedTextField dni, JPasswordField contrasena,JPanel panellogin, JPanel panelpago,Cliente cliente,Billete billete, Billete billete2) {
 		int aux=0;
 		cliente.setDNI(dni.getText());
 		Modelo.encriptMD5=DigestUtils.md5Hex(contrasena.getText());
@@ -36,6 +36,10 @@ public class ModeloLogin {
 			System.out.println("Exception corregido");
 		}
 		if(aux==1) {
+			billete.setDNI(cliente.getDNI());
+			billete2.setDNI(cliente.getDNI());
+			System.out.println("dni billete1: "+billete.getDNI());
+			System.out.println("dni billete2: "+billete2.getDNI());
 			panellogin.setVisible(false);
 			panelpago.setVisible(true);
 		}

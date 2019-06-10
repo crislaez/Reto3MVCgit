@@ -33,6 +33,7 @@ public class Ventana extends JFrame {
 	public PanelLogin panellogin;
 	public PanelRegistro panelregistro;
 	public PanelPago panelpago;
+	public PanelTicket panelticket;
 	
 
 	public Ventana() {
@@ -84,7 +85,10 @@ public class Ventana extends JFrame {
 		contentPane.add(panelpago);
 		panelpago.setLayout(null);
 		
-		
+		//instanciar panelticket
+		panelticket= new PanelTicket();
+		contentPane.add(panelticket);
+		panelticket.setLayout(null);
 
 
 		

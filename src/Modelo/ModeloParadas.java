@@ -172,7 +172,7 @@ public class ModeloParadas {
 	/**
 	 * 
 	 */
-	public void noescogermismaparada() {
+	public void noescogermismaparada(Billete billete, Billete billete2) {
 		System.out.println("vuelta en metodos: "+Modelo.dos);
 		System.out.println("ida en metodos: "+Modelo.uno);
 		if(Modelo.dos==Modelo.uno) {
@@ -180,6 +180,19 @@ public class ModeloParadas {
 		}
 		else {
 			Modelo.cont=0;
+			Modelo.ntrayectos=Modelo.dos-Modelo.uno;
+			if(Modelo.ntrayectos<0) {
+				Modelo.ntrayectosnegativo=Modelo.ntrayectos-Modelo.ntrayectos-Modelo.ntrayectos;
+				billete.setNTrayecto(Modelo.ntrayectosnegativo);
+				billete2.setNTrayecto(Modelo.ntrayectosnegativo);
+				System.out.println("numero negativo trayectos: "+Modelo.ntrayectosnegativo);
+			}
+			else {
+				billete.setNTrayecto(Modelo.ntrayectos);
+				billete2.setNTrayecto(Modelo.ntrayectos);
+				System.out.println("numero de trayectos: "+Modelo.ntrayectos);
+			}
+			
 		}
 	}
 	/**

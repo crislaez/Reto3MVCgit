@@ -95,7 +95,7 @@ public class ControladorParadas implements ActionListener,MouseListener{
 					Modelo.dos=ventana.panelparadas.listLineaVuelta.getSelectedIndex();
 					
 					Modelo.cadena3= (String) ventana.panelparadas.listLineaVuelta.getSelectedValue();
-					modelo.modeloparadas.noescogermismaparada();
+					modelo.modeloparadas.noescogermismaparada(modelo.billete,modelo.billete2);
 					System.out.println("contador"+Modelo.cont);
 					if(Modelo.cont==1) {
 						JOptionPane.showMessageDialog(null, "No puedes escojer las misma parada");
