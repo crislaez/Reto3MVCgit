@@ -21,6 +21,7 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.JTextField;
 import javax.swing.JFormattedTextField;
 import javax.swing.JPasswordField;
+import javax.swing.JTextPane;
 
 public class Ventana extends JFrame {
 
@@ -34,6 +35,7 @@ public class Ventana extends JFrame {
 	public PanelRegistro panelregistro;
 	public PanelPago panelpago;
 	public PanelTicket panelticket;
+	private JLabel lblFondo;
 	
 
 	public Ventana() {
@@ -89,11 +91,8 @@ public class Ventana extends JFrame {
 		panelticket= new PanelTicket();
 		contentPane.add(panelticket);
 		panelticket.setLayout(null);
-
-
 		
 
-		
 		
 		
 		

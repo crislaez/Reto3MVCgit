@@ -69,7 +69,9 @@ public class ControladorPago implements ActionListener{
 			resetear();
 		}
 		if (arg0.getSource()==ventana.panelpago.btnPrecioContinuar) {
-			modelo.modelopago.continuar(modelo.billete, modelo.billete2);
+			modelo.modelopago.continuar(modelo.billete, modelo.billete2,ventana.panelticket.textPaneTicket);
+			funciones.cambiarDePanel(ventana.panelpago, ventana.panelticket);
+			//modelo.modeloticket.EscribiroCrearFichearo(Cod_Billete, NTrayecto, Cod_Linea, Cod_Bus, Cod_Parada_Inicio, Cod_Parada_Fin, Fecha, Hora, DNI, Precio);
 			resetear();
 		}
 		if (arg0.getSource()==ventana.panelpago.billete200) {

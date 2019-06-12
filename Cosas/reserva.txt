@@ -1,9 +1,10 @@
-Codigo del Hotel: 4
-Codigo de las Habitaciones: 44,43,40,
-DNI Cliente: 00000000C
-Precio Hotel: 1296.0
-Nombre Hotel: Hotel4
-Ubicacion Hotel: Las Arenas
-Numero de Personas: 7
-Fecha Inicio: 2019/5/20
-Fecha Fin: 2019/5/26
+Codigo del Billete0
+Numero de Trayectos: 6
+Codigo de la Linea: L1
+Codigo del Bus: 1003
+Codigo Parada Inicio: 1
+Codigo Parada Fin: 8
+Fecha: 2019/6/17
+Hora: 0:0
+DNI: 11111111C
+Precio: 5.5374026

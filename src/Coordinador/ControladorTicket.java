@@ -18,15 +18,18 @@ public class ControladorTicket implements ActionListener{
 		this.ventana=ventana;
 		this.modelo=modelo;
 		
-	
-		
+		ventana.panelticket.btnMas.addActionListener(this);
+		ventana.panelticket.btnFinalizar.addActionListener(this);
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource()==ventana.panelparadas.btnAtras) {
-			
+		if (e.getSource()==ventana.panelticket.btnMas) {
+			funciones.cambiarDePanel(ventana.panelticket, ventana.panelmenuprincipal);
+		}
+		if (e.getSource()==ventana.panelticket.btnFinalizar) {
+			System.exit(-1);
 		}
 		
 	}
