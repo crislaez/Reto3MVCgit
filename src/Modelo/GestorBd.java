@@ -196,9 +196,36 @@ public class GestorBd {
 //insertat billete
 		public void insertarBillete(int Cod_Billete,int NTrayecto,String Cod_Linea,int Cod_Bus, int Cod_Parada_Inicio, int Cod_Parada_Fin,String Fecha,String Hora,String DNI,float Precio) throws Exception 
 		{ 
-		int codigo=0;
-		int aux=0;
-		conectar();
+		
+			conectar();
+		    try 
+		    {
+		    	
+		        // Statements allow to issue SQL queries to the database
+		        statement = connect.createStatement();
+		
+		        // PreparedStatements can use variables and are more efficient
+		        preparedStatement = connect
+		                .prepareStatement("insert into billete(Cod_Billete,NTrayecto,Cod_Linea,Cod_Bus,Cod_Parada_Inicio,Cod_Parada_Fin,Fecha,Hora,DNI,Precio) "
+		                		+ "values (\""+Cod_Billete+"\",\""+NTrayecto+"\",\""+Cod_Linea+"\",\""+Cod_Bus+"\",\""+Cod_Parada_Inicio+"\",\""+Cod_Parada_Fin+"\",\""+Fecha+"\",\""+Hora+"\",\""+DNI+"\",\""+Precio+"\")");       
+		        
+		        preparedStatement.executeUpdate();
+		
+		    } 
+		    catch (SQLException e) 
+		    {
+		    	e.printStackTrace();
+		    	//System.out.println("SQLException corregido");
+		    	  	
+		    } 
+		    close();
+		
+		}
+//--------------------------------------------------------------------------------------------------------------------------------------------------
+		public int consegircodigobillete() {
+			
+			int aux=0;
+			conectar();
 			try
 			{
 				statement = connect.createStatement();
@@ -210,34 +237,33 @@ public class GestorBd {
 			}
 			catch(SQLException e)
 			{
-				e.printStackTrace();
-			}
+				System.out.println("SQLException corregido");
+			};
 			
-			codigo=aux+1;
-			
-		    try 
-		    {
-		    	
-		        // Statements allow to issue SQL queries to the database
-		        statement = connect.createStatement();
-		
-		        // PreparedStatements can use variables and are more efficient
-		        preparedStatement = connect
-		                .prepareStatement("insert into billete(Cod_Billete,NTrayecto,Cod_Linea,Cod_Bus,Cod_Parada_Inicio,Cod_Parada_Fin,Fecha,Hora,DNI,Precio) "
-		                		+ "values (\""+codigo+"\",\""+NTrayecto+"\",\""+Cod_Linea+"\",\""+Cod_Bus+"\",\""+Cod_Parada_Inicio+"\",\""+Cod_Parada_Fin+"\",\""+Fecha+"\",\""+Hora+"\",\""+DNI+"\",\""+Precio+"\")");       
-		        
-		        preparedStatement.executeUpdate();
-		
-		    } 
-		    catch (SQLException e) 
-		    {
-		    	System.out.println("SQLException corregido");
-		    	  	
-		    } 
-		    close();
-		
+			close();
+			return aux+1;
 		}
-
+//--------------------------------------------------------------------------------------------------------------------------------			
+//borrar billete
+	public int borrarBillete(int Cod_Billete,String dni) throws Exception
+	{ int prueba=0;
+	conectar();
+		try
+		{
+			statement = connect.createStatement();
+			prueba=statement.executeUpdate("delete from billete where Cod_Billete = '"+Cod_Billete+"' and DNI = '"+dni+"'");
+			
+	
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+			prueba=1;
+		}
+		System.out.println("problema: "+prueba);
+		 close();
+		return prueba;
+	}
 //--------------------------------------------------------------------------------------------------------------------------------------------------
 //insertar host
 	public static String InsertarHost() 

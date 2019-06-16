@@ -30,7 +30,7 @@ public class ControladorMenuPrincipal implements ActionListener{
 			
 		}
 		if (e.getSource()==ventana.panelmenuprincipal.btnborrarreserva) {
-			//funciones.cambiarDePanel(ventana.panelbienvenida, ventana.panelmenuprincipal);
+			funciones.cambiarDePanel(ventana.panelmenuprincipal, ventana.panelborrarbillete);
 			
 		}
 		if (e.getSource()==ventana.panelmenuprincipal.btnborrarcliente) {

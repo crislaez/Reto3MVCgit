@@ -18,6 +18,7 @@ public class Modelo {
 	public ModeloRegistro modeloregistro;
 	public ModeloPago modelopago;
 	public ModeloTicket modeloticket;
+	public ModeloBorrarBillete modeloborrarbillete;
 	
 	public GestorBd gestor;
 	public static String codigo;
@@ -74,6 +75,7 @@ public class Modelo {
 		this.modeloregistro= new ModeloRegistro(gestor);
 		this.modelopago=new ModeloPago(gestor);
 		this.modeloticket=new ModeloTicket(gestor);
+		this.modeloborrarbillete=new ModeloBorrarBillete(gestor);
 	}
 	
 	

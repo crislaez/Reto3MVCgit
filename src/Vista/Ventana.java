@@ -35,8 +35,7 @@ public class Ventana extends JFrame {
 	public PanelRegistro panelregistro;
 	public PanelPago panelpago;
 	public PanelTicket panelticket;
-	private JLabel lblFondo;
-	
+	public PanelBorrarBillete panelborrarbillete;
 
 	public Ventana() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -91,6 +90,12 @@ public class Ventana extends JFrame {
 		panelticket= new PanelTicket();
 		contentPane.add(panelticket);
 		panelticket.setLayout(null);
+		
+		//instanciar panelborrarbillete
+		panelborrarbillete= new PanelBorrarBillete();
+		contentPane.add(panelborrarbillete);
+		panelborrarbillete.setLayout(null);
+		
 		
 
 		

@@ -6,8 +6,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Cristian/Desktop/Cristian/codigo java/mysql-connector-java-8.0.13.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Cristian/Desktop/Cristian/codigo java/jcalendar-1.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Cristian/Desktop/Cristian/codigo java/commons-codec-1.7.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse-workspace/AAReto3MVC/Cosas/mysql-connector-java-8.0.13.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse-workspace/AAReto3MVC/Cosas/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse-workspace/AAReto3MVC/Cosas/commons-codec-1.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -33,6 +33,8 @@ public class ModeloPago {
 	 * @param billete2
 	 */
 	public void continuar(Billete billete, Billete billete2,JTextPane textReserva) {
+		billete.setCod_Billete(gestor.consegircodigobillete());
+		System.out.println("el probelma del codigo billete: "+billete.getCod_Billete());
 		String frase= ("Codigo del Billete"+billete.getCod_Billete()+"\r\n"
 				+"Numero de Trayectos: "+billete.getNTrayecto()+ "\r\n"
 						+"Codigo de la Linea: " + billete.getCod_Linea() + "\r\n" 
@@ -41,8 +43,14 @@ public class ModeloPago {
 				+"Codigo Parada Fin: " + billete.getCod_Parada_Fin()+ "\r\n"
 						+"Fecha: " + billete.getFecha()+ "\r\n"+"Hora: " + billete.getHora()+ "\r\n"
 				+"DNI: " + billete.getDNI()+ "\r\n"
-						+"Precio: " + billete.getPrecio()+ "\r\n");
-		
+						+"Precio: " + billete.getPrecio()+ "\r\n"
+				+"---------------------"+ "\r\n");
+		if(Modelo.aux2==0) {
+			
+		}
+		else if(Modelo.aux2==1) {
+			
+		}
 		try {
 			gestor.insertarBillete(billete.getCod_Billete(), billete.getNTrayecto(), billete.getCod_Linea(), billete.getCod_Bus(), billete.getCod_Parada_Inicio(), billete.getCod_Parada_Fin(), billete.getFecha(), billete.getHora(), billete.getDNI(), billete.getPrecio());
 			EscribiroCrearFichearo(billete.getCod_Billete(), billete.getNTrayecto(), billete.getCod_Linea(), billete.getCod_Bus(), billete.getCod_Parada_Inicio(), billete.getCod_Parada_Fin(), billete.getFecha(), billete.getHora(), billete.getDNI(), billete.getPrecio());
@@ -54,9 +62,23 @@ public class ModeloPago {
 		
 		if(Modelo.aux2==1) {
 			try {
+				
+				billete.setCod_Billete(gestor.consegircodigobillete());
+				
+				String frase2= ("Codigo del Billete"+billete.getCod_Billete()+"\r\n"
+						+"Numero de Trayectos: "+billete.getNTrayecto()+ "\r\n"
+								+"Codigo de la Linea: " + billete.getCod_Linea() + "\r\n" 
+						+ "Codigo del Bus: " + billete.getCod_Bus()+ "\r\n" 
+								+ "Codigo Parada Inicio: " + billete.getCod_Parada_Inicio()+ "\r\n"
+						+"Codigo Parada Fin: " + billete.getCod_Parada_Fin()+ "\r\n"
+								+"Fecha: " + billete.getFecha()+ "\r\n"+"Hora: " + billete.getHora()+ "\r\n"
+						+"DNI: " + billete.getDNI()+ "\r\n"
+								+"Precio: " + billete.getPrecio()+ "\r\n"
+						+"---------------------"+ "\r\n");
+				
 				gestor.insertarBillete(billete2.getCod_Billete(), billete2.getNTrayecto(), billete2.getCod_Linea(), billete2.getCod_Bus(), billete2.getCod_Parada_Inicio(), billete2.getCod_Parada_Fin(), billete2.getFecha(), billete2.getHora(), billete2.getDNI(), billete2.getPrecio());
 				EscribiroCrearFichearo(billete.getCod_Billete(), billete.getNTrayecto(), billete.getCod_Linea(), billete.getCod_Bus(), billete.getCod_Parada_Inicio(), billete.getCod_Parada_Fin(), billete.getFecha(), billete.getHora(), billete.getDNI(), billete.getPrecio());
-				textReserva.getStyledDocument().insertString(textReserva.getStyledDocument().getLength(),frase, null);
+				textReserva.getStyledDocument().insertString(textReserva.getStyledDocument().getLength(),frase2, null);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				System.out.println("Exception corregido");

@@ -1,10 +1,10 @@
-Codigo del Billete0
-Numero de Trayectos: 6
+Codigo del Billete13
+Numero de Trayectos: 4
 Codigo de la Linea: L1
 Codigo del Bus: 1003
 Codigo Parada Inicio: 1
-Codigo Parada Fin: 8
+Codigo Parada Fin: 6
 Fecha: 2019/6/17
 Hora: 0:0
 DNI: 11111111C
-Precio: 5.5374026
+Precio: 4.7267323
